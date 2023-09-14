@@ -2,16 +2,16 @@ describe('When: Use the search feature', () => {
   beforeEach(() => {
     cy.startAt('/');
   });
+  
+  it('should search a book and Wait for the snack bar to appear', () => {
+   
+    cy.get('[id="searchInput"]').type('javascript');
+    cy.get('[data-test="search"]').click();
+    cy.wait(500);
+    cy.get('[data-test="add"]').not('[disabled]').first().click();
+    cy.wait(500);
+    cy.get('[data-test="snackbar" ]').should('be.visible');
 
-  it('Then: I should be able to search books by title', () => {
-    cy.get('input[type="search"]').type('javascript');
-
-    cy.get('form').submit();
-
-    cy.get('[data-testing="book-item"]').should('have.length.greaterThan', 1);
   });
 
-  xit('Then: I should see search results as I am typing', () => {
-    // TODO: Implement this test!
-  });
 });
