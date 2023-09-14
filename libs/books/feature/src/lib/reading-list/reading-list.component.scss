@@ -45,3 +45,13 @@
   font-size: 1rem;
   color: $gray25;
 }
+.finished {
+  color: green;
+}
+
+.finished-reading {
+  text-decoration: line-through;
+}
+.reading-list-item .reading-list-item--button-container{
+  flex-direction: row;
+}
